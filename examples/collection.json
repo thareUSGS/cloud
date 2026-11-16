@@ -1,0 +1,51 @@
+{
+  "id": "landsat-example",
+  "type": "Collection",
+  "stac_version": "1.1.0",
+  "description": "A sample collection of Landsat 9 imagery demonstrating detailed cloud and atmospheric obscuration metadata on its Items.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "./catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "self",
+      "href": "./collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./item.json",
+      "type": "application/geo+json",
+      "title": "Landsat 9 sample scene"
+    }
+  ],
+  "title": "Landsat 9 Cloud Metadata Example",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -122.6,
+          37.0,
+          -121.2,
+          38.1
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2024-06-15T18:42:00Z",
+          "2024-06-15T18:43:00Z"
+        ]
+      ]
+    }
+  },
+  "license": "proprietary"
+}

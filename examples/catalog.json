@@ -1,0 +1,25 @@
+{
+  "id": "earth-observation-cloud-examples",
+  "type": "Catalog",
+  "stac_version": "1.1.0",
+  "description": "Example catalog of remotely sensed Earth observation data with cloud and atmospheric obscuration metadata.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "self",
+      "href": "./catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Example Landsat Collection"
+    }
+  ],
+  "title": "Earth Observation Cloud Examples"
+}

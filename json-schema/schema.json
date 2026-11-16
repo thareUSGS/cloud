@@ -1,0 +1,148 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://stac-extensions.github.io/cloud/v1.0.0/schema.json",
+  "title": "Cloud Extension",
+  "description": "Cloud and atmospheric obscuration metadata for Earth observation imagery.",
+  "type": "object",
+
+  "definitions": {
+    "fields": {
+      "type": "object",
+      "properties": {
+
+        "cloud:clear": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Percentage of valid pixels classified as clear surface."
+        },
+
+        "cloud:clear_area": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Area of clear visible surface in square kilometers."
+        },
+
+        "cloud:cloud_area": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Area classified as cloud in square kilometers."
+        },
+
+        "cloud:shadow": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Percentage classified as cloud shadow."
+        },
+
+        "cloud:shadow_area": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Area classified as cloud shadow in square kilometers."
+        },
+
+        "cloud:cirrus": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Percentage classified as cirrus cloud."
+        },
+
+        "cloud:cirrus_area": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Area classified as cirrus cloud in square kilometers."
+        },
+
+        "cloud:snow_ice": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Percentage classified as snow or ice."
+        },
+
+        "cloud:snow_ice_area": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Area classified as snow or ice in square kilometers."
+        },
+
+        "cloud:haze": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Percentage classified as haze or aerosol obscuration."
+        },
+
+        "cloud:haze_area": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Area classified as haze or aerosol obscuration in square kilometers."
+        },
+
+        "cloud:smoke": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Percentage classified as smoke contamination."
+        },
+
+        "cloud:smoke_area": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Area classified as smoke contamination in square kilometers."
+        },
+
+        "cloud:reference_area": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total valid area used for percentage calculations in square kilometers."
+        },
+
+        "cloud:algorithm": {
+          "type": "string",
+          "description": "Cloud or atmospheric obscuration classification algorithm."
+        },
+
+        "cloud:algorithm_version": {
+          "type": "string",
+          "description": "Version of the classification algorithm."
+        },
+
+        "cloud:mask_type": {
+          "type": "string",
+          "enum": [
+            "qa_band",
+            "pixel_qa",
+            "qa_pixel",
+            "fmask",
+            "cfmask",
+            "scl",
+            "probability",
+            "custom"
+          ],
+          "description": "Type of cloud mask product."
+        },
+
+        "cloud:confidence": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "description": "Overall confidence assessment."
+        },
+
+        "cloud:classes": {
+          "type": "object",
+          "description": "Mapping of source classification values to class names.",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
