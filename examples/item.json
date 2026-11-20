@@ -5,7 +5,7 @@
     "https://stac-extensions.github.io/cloud/v1.0.0/schema.json",
     "https://stac-extensions.github.io/eo/v2.0.0/schema.json"
   ],
-  "id": "LC09_L2SP_044034_20240615_20240617_02_T1",
+  "id": "modis-aqua-cloud-example-20240615",
   "geometry": {
     "type": "Polygon",
     "coordinates": [
@@ -40,17 +40,17 @@
     38.1
   ],
   "properties": {
-    "datetime": "2024-06-15T18:42:31Z",
-    "platform": "landsat-9",
+    "datetime": "2024-06-15T12:00:00Z",
+    "platform": "aqua",
     "instruments": [
-      "oli-2",
-      "tirs-2"
+      "modis"
     ],
-    "constellation": "landsat",
+    "title": "Synthetic MODIS Aqua cloud-property example",
+    "description": "Illustrative example only; all MODIS-specific values in this Item are synthetic.",
     "eo:cloud_cover": 19.5,
     "cloud:clear": 72.1,
     "cloud:clear_area": 721.0,
-    "cloud:cloud_area": 184.0,
+    "cloud:cloud_area": 195.0,
     "cloud:shadow": 4.2,
     "cloud:shadow_area": 42.0,
     "cloud:cirrus": 1.1,
@@ -74,6 +74,119 @@
       "4": "snow_ice",
       "5": "haze",
       "6": "smoke"
+    },
+    "cloud:modis": {
+      "fractions": {
+        "cloud_fraction": 21.3,
+        "cloud_fraction_sdev": 2.4,
+        "cloud_fraction_n": 1000,
+        "cloud_fraction_day": 20.1,
+        "cloud_fraction_day_sdev": 2.6,
+        "cloud_fraction_day_n": 640,
+        "cloud_fraction_night": 18.4,
+        "cloud_fraction_night_sdev": 2.0,
+        "cloud_fraction_night_n": 360,
+        "cirrus_fraction_SWIR": 3.1,
+        "cirrus_fraction_IR": 4.0,
+        "highcloudfraction_IR": 7.2,
+        "cloud_retrieval_fraction_liquid": 60.0,
+        "cloud_retrieval_fraction_liquid_n": 600,
+        "cloud_retrieval_fraction_ice": 30.0,
+        "cloud_retrieval_fraction_ice_n": 300,
+        "cloud_retrieval_fraction_undetermined": 10.0,
+        "cloud_retrieval_fraction_undetermined_n": 100,
+        "cloud_retrieval_fraction_PCL_liquid": 54.0,
+        "cloud_retrieval_fraction_singlelayer_ice": 26.0,
+        "cloud_retrieval_fraction_multilayer_combined": 8.0,
+        "cloud_retrieval_fraction_16_liquid": 55.0,
+        "cloud_retrieval_fraction_37_ice": 28.0,
+        "cloud_retrieval_fraction_1621_liquid": 58.0
+      },
+      "angles": {
+        "solar_zenith_angle": 32.0,
+        "solar_zenith_angle_sdev": 4.0,
+        "solar_zenith_angle_n": 640,
+        "solar_azimuth_angle": 145.0,
+        "sensor_zenith_angle": 12.0,
+        "sensor_azimuth_angle": 202.0
+      },
+      "cloud_top": {
+        "cloud_top_temperature": 250.0,
+        "cloud_top_temperature_sdev": 8.0,
+        "cloud_top_temperature_n": 820,
+        "cloud_top_temperature_day": 252.0,
+        "cloud_top_pressure": 650.0,
+        "cloud_top_pressure_night": 700.0,
+        "cloud_top_height": 4500.0,
+        "cloud_top_height_day_sdev": 700.0
+      },
+      "water_path": {
+        "cloud_water_path_liquid": 120.0,
+        "cloud_water_path_liquid_sdev": 25.0,
+        "cloud_water_path_liquid_error": 18.0,
+        "cloud_water_path_ice": 95.0,
+        "cloud_water_path_undetermined": 40.0,
+        "cloud_water_path_PCL_liquid": 110.0,
+        "cloud_water_path_singlelayer_ice": 90.0,
+        "cloud_water_path_16_liquid": 115.0,
+        "cloud_water_path_37_ice": 88.0,
+        "cloud_water_path_1621_liquid": 118.0
+      },
+      "optical_properties": {
+        "cloud_optical_thickness_liquid": 12.0,
+        "cloud_optical_thickness_liquid_sdev": 3.0,
+        "cloud_optical_thickness_ice": 18.0,
+        "cloud_optical_thickness_PCL_liquid": 10.0,
+        "cloud_optical_thickness_singlelayer_ice": 16.0,
+        "cloud_optical_thickness_16_liquid": 11.0,
+        "cloud_optical_thickness_37_ice": 19.0,
+        "cloud_optical_thickness_1621_liquid": 12.5,
+        "cloud_effective_radius_liquid": 14.0,
+        "cloud_effective_radius_liquid_sdev": 2.5,
+        "cloud_effective_radius_ice": 32.0,
+        "cloud_effective_radius_PCL_liquid": 13.0,
+        "cloud_effective_radius_singlelayer_ice": 30.0,
+        "cloud_effective_radius_16_liquid": 15.0,
+        "cloud_effective_radius_37_ice": 31.0,
+        "cloud_effective_radius_1621_liquid": 14.5,
+        "cloud_effective_emissivity": 0.85,
+        "cloud_effective_emissivity_day": 0.87,
+        "cloud_effective_emissivity_night": 0.82,
+        "cirrus_reflectance": 0.18
+      },
+      "surface_fractions": {
+        "ctp_deepwaterfraction_day": 0.6,
+        "ctp_deepwaterfraction_day_n": 600,
+        "ctp_deepwaterfraction_night": 0.55,
+        "ctp_deepwaterfraction_night_n": 550,
+        "ctp_shallowwaterfraction_day": 0.08,
+        "ctp_shallowwaterfraction_day_n": 80,
+        "ctp_shallowwaterfraction_night": 0.1,
+        "ctp_shallowwaterfraction_night_n": 100,
+        "ctp_desertfraction_day": 0.05,
+        "ctp_desertfraction_day_n": 50,
+        "ctp_desertfraction_night": 0.04,
+        "ctp_desertfraction_night_n": 40,
+        "ctp_landfraction_day": 0.27,
+        "ctp_landfraction_day_n": 270,
+        "ctp_landfraction_night": 0.25,
+        "ctp_landfraction_night_n": 250
+      },
+      "joint_histograms": {
+        "cloudtoptemperature_vs_pressure_jhisto": {
+          "x_bin_edges": [200, 220, 240, 260, 280],
+          "y_bin_edges": [100, 300, 500, 700, 900],
+          "counts": [
+            [2, 4, 1, 0],
+            [1, 8, 3, 0],
+            [0, 5, 12, 2],
+            [0, 1, 6, 9]
+          ]
+        }
+      },
+      "cloud_droplet_number_concentration": {
+        "cloud_droplet_number_concentration": 75.0
+      }
     }
   },
   "links": [
@@ -100,7 +213,7 @@
   ],
   "assets": {
     "visual": {
-      "href": "https://example.com/landsat/sample-visual.tif",
+      "href": "https://example.com/modis/sample-visual.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Visual image",
       "roles": [
@@ -108,7 +221,7 @@
       ]
     },
     "classification_mask": {
-      "href": "https://example.com/landsat/sample-classification-mask.tif",
+      "href": "https://example.com/modis/sample-classification-mask.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Cloud and obscuration classification mask",
       "roles": [
@@ -116,5 +229,5 @@
       ]
     }
   },
-  "collection": "landsat-example"
+  "collection": "modis-aqua-example"
 }

@@ -141,8 +141,91 @@
           "additionalProperties": {
             "type": "string"
           }
+        },
+
+        "cloud:modis": {
+          "type": "object",
+          "description": "Optional MODIS Collection 6.1 cloud-product parameters grouped by product family. Within scalar maps, preserve the native MODIS variable names and native values.",
+          "properties": {
+            "fractions": {
+              "$ref": "#/definitions/modisScalarMap",
+              "description": "Cloud fraction, cirrus/high-cloud fraction, and cloud-phase/retrieval fraction parameters."
+            },
+            "angles": {
+              "$ref": "#/definitions/modisScalarMap",
+              "description": "Solar and sensor zenith/azimuth angle parameters."
+            },
+            "cloud_top": {
+              "$ref": "#/definitions/modisScalarMap",
+              "description": "Cloud-top temperature, pressure, and geopotential height parameters."
+            },
+            "water_path": {
+              "$ref": "#/definitions/modisScalarMap",
+              "description": "Liquid, ice, and undetermined cloud water path parameters."
+            },
+            "optical_properties": {
+              "$ref": "#/definitions/modisScalarMap",
+              "description": "Cloud optical thickness, particle effective radius, effective emissivity, and cirrus reflectance parameters."
+            },
+            "surface_fractions": {
+              "$ref": "#/definitions/modisScalarMap",
+              "description": "Ocean, coast, desert, and land surface fractions, including cloud-top-product surface-class fractions."
+            },
+            "joint_histograms": {
+              "type": "object",
+              "description": "MODIS joint-histogram variables. Each value carries the bin edges for both axes and a 2D matrix of histogram counts.",
+              "additionalProperties": {
+                "$ref": "#/definitions/modisJointHistogram"
+              }
+            },
+            "cloud_droplet_number_concentration": {
+              "$ref": "#/definitions/modisScalarMap",
+              "description": "Monthly mean cloud droplet number concentration parameters."
+            }
+          },
+          "additionalProperties": false
         }
       }
+    },
+    "modisScalarMap": {
+      "type": "object",
+      "description": "Map of native MODIS parameter names (including _sdev, _n, and _error variants where provided) to numeric values.",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "modisJointHistogram": {
+      "type": "object",
+      "properties": {
+        "x_bin_edges": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "y_bin_edges": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "counts": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "required": [
+        "x_bin_edges",
+        "y_bin_edges",
+        "counts"
+      ],
+      "additionalProperties": false
     }
   }
 }
